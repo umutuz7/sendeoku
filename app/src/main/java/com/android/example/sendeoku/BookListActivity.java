@@ -7,12 +7,12 @@ import android.os.Bundle;
 import com.android.example.sendeoku.dummy.DetailActivity;
 import com.android.example.sendeoku.dummy.DummyContent;
 
-public class MainActivity extends AppCompatActivity implements BookFragment.OnListFragmentInteractionListener {
+public class BookListActivity extends AppCompatActivity implements BookFragment.OnListFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_book_list);
     }
 
     @Override
