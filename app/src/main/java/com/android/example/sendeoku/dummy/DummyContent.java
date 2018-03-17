@@ -27,6 +27,7 @@ public class DummyContent {
 
     static {
         // Add some sample items.
+        addItem(new DummyItem("Dönüşüm", "Yazar: Franz Kafka \nKonum: Sariyer", "Franz Kafka'nın 1915'te yayımlanan Dönüşüm adlı öyküsü, yazarın, anlatım sanatının doruğuna ulaştığı bir eseridir."));
         for (int i = 1; i <= COUNT; i++) {
             addItem(createDummyItem(i));
         }
