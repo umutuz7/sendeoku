@@ -9,6 +9,7 @@ import com.android.example.sendeoku.dummy.DummyContent;
 
 public class BookListActivity extends AppCompatActivity implements BookFragment.OnListFragmentInteractionListener {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
