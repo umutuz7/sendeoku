@@ -113,8 +113,9 @@ public class BookFragment extends Fragment {
         void onListFragmentInteraction(DummyItem item);
     }
 
-    public void addBook(DummyItem item) {
-        items.add(item);
+    public void addBook(List<DummyItem> itemList) {
+        items.clear();
+        items.addAll(itemList);
         adapter.notifyDataSetChanged();
     }
 }

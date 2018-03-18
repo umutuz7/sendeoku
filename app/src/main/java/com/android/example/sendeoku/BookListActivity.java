@@ -13,7 +13,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class BookListActivity extends AppCompatActivity implements BookFragment.OnListFragmentInteractionListener {
 
@@ -39,11 +41,13 @@ public class BookListActivity extends AppCompatActivity implements BookFragment.
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 Iterator<DataSnapshot> iterator = dataSnapshot.child("book").getChildren().iterator();
+                List<DummyContent.DummyItem> items = new ArrayList<>();
                 while (iterator.hasNext()) {
                     DummyContent.DummyItem value = iterator.next().getValue(DummyContent.DummyItem.class);
-                    fragment.addBook(value);
+                    items.add(value);
                     Log.d(TAG, "Value is: " + value.id);
                 }
+                fragment.addBook(items);
             }
 
             @Override
