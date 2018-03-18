@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.android.example.sendeoku.dummy.DummyContent;
 import com.android.example.sendeoku.dummy.DummyContent.DummyItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,6 +29,8 @@ public class BookFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+    private MyBookRecyclerViewAdapter adapter;
+    private List<DummyItem> items;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -45,6 +48,7 @@ public class BookFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,7 +73,9 @@ public class BookFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyBookRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            items = new ArrayList<>();
+            adapter = new MyBookRecyclerViewAdapter(items, mListener);
+            recyclerView.setAdapter(adapter);
         }
         return view;
     }
@@ -105,5 +111,10 @@ public class BookFragment extends Fragment {
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
         void onListFragmentInteraction(DummyItem item);
+    }
+
+    public void addBook(DummyItem item) {
+        items.add(item);
+        adapter.notifyDataSetChanged();
     }
 }

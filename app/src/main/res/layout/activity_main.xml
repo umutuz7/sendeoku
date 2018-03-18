@@ -18,7 +18,7 @@
             style="@style/ThemeOverlay.FirebaseIcon"
             android:id="@+id/google_icon"
             android:contentDescription="@string/desc_firebase_lockup"
-            android:src="@drawable/ic_launcher_background"
+            android:src="@drawable/open_book"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
